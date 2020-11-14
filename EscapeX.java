@@ -38,7 +38,6 @@ public class EscapeX {
 		System.out.println("");
 		
 		System.out.println( nome + ", Venha descobrir o que aconteceu!");
-		//chama o menu de opções
 		int opcao;
 		do {
 		System.out.println("1 - Instruções");
