@@ -5,19 +5,15 @@ import java.util.Scanner;
 public class EscapeX {
 	
 	public static Scanner  input = new Scanner(System.in);
-	int prof=0;
-	static int habcrit=0, hablad=0;
+	static int hablad=0, comodo = 0;
+	static String nome;
 	
 	public static void main(String[] args) {
 		
 		System.out.println("Olá Jogador!!");
 		System.out.println("Qual é o seu nome?");
 		String nome = input.next();
-		System.out.println("Escolha a sua Profissão: \n"
-				+ "1 - Critico de Arte \n"
-				+ "2 - Ladrão de Arte");
-		int prof = input.nextInt();
-		
+				
 		System.out.println(nome + " Bem Vindo ao EscapeX!");
 		System.out.println("");
 		System.out.println("Vamos contar um pouquinho da sua história!!");
@@ -42,7 +38,7 @@ public class EscapeX {
 		System.out.println("");
 		
 		System.out.println( nome + ", Venha descobrir o que aconteceu!");
-		
+		//chama o menu de opções
 		int opcao;
 		do {
 		System.out.println("1 - Instruções");
@@ -58,6 +54,7 @@ public class EscapeX {
 		System.out.println("Após coletar todas as dicas dos comodos e resolver os mistérios, você conseguirá sair da casa \n\n ");
 		break; 
 		case 2:
+		//Inicia o Jogo
 		Jogar();
 		break; 
 		case 3:
@@ -76,16 +73,116 @@ public class EscapeX {
 		System.out.println("Opção inválida!");
 		}
 		} while (opcao !=4 && opcao !=2);
-		
-	
 	}
-	
+			
+		
 	public static void Jogar() {
+		
 		System.out.println("Bora Jogar!");
+		do {
+			switch (comodo) {
+			case 0:
+				System.out.println("Você está no quarto");
+				System.out.println("resolvido");
+				comodo = 1;
+			break;
+			case 1:
+				System.out.println("Você está no corredor");
+				System.out.println("Escolha o comodo que você quer entrar:\n"
+						+ "Banheiro\n"
+						+ "Garagem\n"
+						+ "Cozinha\n"
+						+ "Sala\n");
+				String comodo2 = input.next();
+				
+				switch (comodo2) {
+				case "Banheiro":
+				case "banheiro":
+					comodo = 2;
+					break;
+				case "Garagem":
+				case "garagem":
+					comodo = 3;
+					break;
+				case "Cozinha":
+				case "cozinha":
+					comodo = 4;
+					break;
+				case "Sala":
+				case "sala":
+					comodo = 5;
+					break;
+				
+				}				
+			break;
+			case 2:
+				System.out.println("Você está no banheiro");
+				System.out.println("resolvido");
+				comodo = 1;
+				break;
+			case 3:
+				System.out.println("Você está na garagem");
+				System.out.println("resolvido");
+				comodo = 6;
+				break;
+			case 4:
+				System.out.println("Você está na cozinha");
+				System.out.println("resolvido");
+				comodo = 1;
+				break;
+			case 5:
+				System.out.println("Você está na sala");
+				System.out.println("Na sela você vê um sofá, uma TV, um armário e a porta. \n"
+						+ "Escolha qual item você quer analisar:\n"
+						+ "Sofá\n"
+						+ "TV\n"
+						+ "Armário\n"
+						+ "Porta");
+				String objeto = input.next();
+				
+				switch (objeto) {
+				case "Sofá":
+				case "Sofa":
+				case "sofá":
+				case "sofa":
+					System.out.println("Em baixo das almofadas você encontra 1 grampo.");
+				case "TV":
+				case "tv":
+				case "Tv":
+					System.out.println("Na TV está escrito está equação:");
+				case "Armário":
+				case "armário":
+				case "armario":
+				case "Armario":
+					System.out.println("Ao mexer no armário você encontra um fundo falso, deseja remover?");
+					String fundo = input.next();
+					if (fundo == "Sim") {
+						System.out.println("Você encontrou um cofre\n"
+								+ "para abri-lo resolva a equação:");
+					}
+				
+				}
+				
+				comodo = 6;
+				break;
+			case 6:
+				System.out.println("saiu");
+				comodo = 7;
+				break;									 
+			} 
+		} while (comodo !=7);
+		System.out.println("FIM!");
+		
+			
 	}
 
 	public static void HabAbrePort() {
-		int dado = (int)(1 + Math.random()*(6-habcrit));
+		if (comodo == 5 && comodo == 3) {
+			int dado = (int)(1 + Math.random()*(48-hablad));
+		} else {
+			int dado = (int)(1 + Math.random()*(6-hablad));
+		}
+		
 		
 	}
 		
