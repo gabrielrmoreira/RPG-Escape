@@ -5,7 +5,7 @@
  */
 package escapex1;
 
-;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +14,7 @@ import java.util.List;
 public class EscapeX1 {
 
     static Scanner input = new Scanner(System.in);
-    static int hablad = 0, comodo = 0;
+    static int hablad = 0, comodo = 0, grampo=0, chave_sala=0, dado;
 
    
 
@@ -293,6 +293,7 @@ public class EscapeX1 {
                              pressEnter();
                              System.out.println("Isso quer dizer que alguém esteve aqui a pouco tempo");
                              System.out.println("Dentro do pote tem um grampo e outro bilhete:");//somar grampo
+                             contador();
                              pressEnter();
                              System.out.println("Qual foi o conselho mais importante que eu te ensinei???");
                              System.out.println("Sempre olhar tudo nos minimos detalhes, tudo o que fizer faça com perfeição");
@@ -412,39 +413,80 @@ public class EscapeX1 {
 				comodo = 1;
 				break;
 			case 5:
-				System.out.println("Você está na sala");
-				System.out.println("Na sela você vê um sofá, uma TV, um armário e a porta. \n"
+				int cSofa;
+				System.out.println("Na sala você vê um sofá, uma TV, um armário e a porta. \n"
 						+ "Escolha qual item você quer analisar:\n"
 						+ "Sofá\n"
 						+ "TV\n"
 						+ "Armário\n"
 						+ "Porta");
-				String objeto = input.next();
+				String objeto = input.next().toLowerCase();
 				
 				switch (objeto) {
-				case "Sofá":
-				case "Sofa":
 				case "sofá":
 				case "sofa":
-					System.out.println("Em baixo das almofadas você encontra 1 grampo.");
-				case "TV":
+					for (cSofa=0;cSofa<1;cSofa++) {
+						if (cSofa==0) {
+							System.out.println("Em baixo das almofadas você encontra 1 grampo.");
+							pressEnter();
+							contador();
+							cSofa = cSofa+1;
+						} else {
+							System.out.println("Você já procurou no sofá e não encontra mais nada.");
+							pressEnter();
+							}
+						}
+					break;
 				case "tv":
-				case "Tv":
 					System.out.println("Na TV está escrito está equação:");
-				case "Armário":
+					break;
 				case "armário":
 				case "armario":
-				case "Armario":
 					System.out.println("Ao mexer no armário você encontra um fundo falso, deseja remover?");
 					String fundo = input.next();
 					if (fundo == "Sim") {
 						System.out.println("Você encontrou um cofre\n"
 								+ "para abri-lo resolva a equação:");
 					}
-				
+					break;
+				case "porta":
+					int i1,n=0;
+					if (grampo >0 && chave_sala==0) {
+						System.out.println("Você não possui a chave da porta, porém pode tentar abrir a porta com os grampos que possui."
+								+ "Você possui: "+grampo+" grampos, isso te dá a mesma quantidade de chances."
+										+ "O dado possui"+(48-hablad)+"lados.");
+						System.out.println("Escolha um número entre 1 e "+(48-hablad));
+						n = input.nextInt();
+						AbrePort();
+						System.out.println(dado);
+						if (n==dado) {
+							System.out.println("Você conseguiu abrir a porta e saiu da casa!");
+							comodo=7;
+						}else {
+							do {
+								for (i1=0;i1<grampo;i1++) {
+								System.out.println("Tente novamente");
+								grampo = grampo-1;
+								}
+							}while (i1<grampo);
+							break;							
+						}
+					}
+					if (chave_sala==1) {
+						System.out.println("Você abriu a porta e saiu da casa");
+						comodo=6;
+						break;
+					}
+					if (chave_sala == 0 && grampo == 0) {
+						System.out.println("Você não tem a chave e nem grampos para tentar abrir a porta e sair.");
+						pressEnter();
+						comodo = 5;
+						break;
+					}
+					default:
+						System.out.println("Opção inválida.");
+					
 				}
-				
-				comodo = 6;
 				break;
 			case 6:
 				System.out.println("saiu");
@@ -460,12 +502,13 @@ public class EscapeX1 {
 
     
 
-    public static void HabAbrePort() {
-        if (comodo == 5 && comodo == 3) {
-            int dado = (int) (1 + Math.random() * (48 - hablad));
+    public static int AbrePort() {
+    	if (comodo == 5 && comodo == 3) {
+        	 dado = (int) (1 + Math.random() * (48 - hablad));
         } else {
-            int dado = (int) (1 + Math.random() * (6 - hablad));
+            dado = (int) (1 + Math.random() * (6 - hablad));
         }
+        return dado;
     }
 public static void pressEnter(){
       Scanner input = new Scanner (System.in);
@@ -481,8 +524,8 @@ public static String jogador(){
         jogador = input.next();
         return jogador;
 }
-      public static int contador(int total){
-         int grampo = 0;
+      public static int contador(){
+         
          grampo = grampo + 1;
           return grampo;
       }
