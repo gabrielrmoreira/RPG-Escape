@@ -14,9 +14,8 @@ import java.util.List;
 public class EscapeX1 {
 
     static Scanner input = new Scanner(System.in);
-    static int hablad = 0, comodo = 0, grampo=0, chave_sala=0, dado;
-
-   
+    static int hablad = 0, comodo = 0, grampo=0, chave_sala=0, dado, cSofa=0;
+      
 
     public static void main(String[] args) {
 
@@ -90,8 +89,8 @@ public class EscapeX1 {
 
     @SuppressWarnings("empty-statement")
     public static void Jogar() {
-     
-        System.out.println("----*****  Bora Jogar  ****----!");
+    	
+    	System.out.println("----*****  Bora Jogar  ****----!");
         do {
             
             switch (comodo) {
@@ -413,7 +412,7 @@ public class EscapeX1 {
 				comodo = 1;
 				break;
 			case 5:
-				int cSofa;
+				
 				System.out.println("Na sala você vê um sofá, uma TV, um armário e a porta. \n"
 						+ "Escolha qual item você quer analisar:\n"
 						+ "Sofá\n"
@@ -425,30 +424,305 @@ public class EscapeX1 {
 				switch (objeto) {
 				case "sofá":
 				case "sofa":
-					for (cSofa=0;cSofa<1;cSofa++) {
+					do {
 						if (cSofa==0) {
-							System.out.println("Em baixo das almofadas você encontra 1 grampo.");
-							pressEnter();
-							contador();
-							cSofa = cSofa+1;
-						} else {
-							System.out.println("Você já procurou no sofá e não encontra mais nada.");
-							pressEnter();
-							}
-						}
+								System.out.println("Em baixo das almofadas você encontra 1 grampo.");
+								pressEnter();
+								cSofa++;
+							} else {
+								System.out.println("Você já procurou no sofá e não encontra mais nada.");
+								pressEnter();
+								}
+					
+					}while (cSofa<1);
 					break;
 				case "tv":
 					System.out.println("Na TV está escrito está equação:");
+					System.out.println("\n"
+							+ "                                                                                                                                                                                                        \r\n" + 
+							"                                                                                                                                                                                                        \r\n" + 
+							"                                                                                                                                                                                                        \r\n" + 
+							"           /*//////////////((((((((((((((###################%%%%%%%%%%%%%%%%%%%%%&%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&@         \r\n" + 
+							"           //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@         \r\n" + 
+							"           //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@         \r\n" + 
+							"           //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@         \r\n" + 
+							"           (/@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@         \r\n" + 
+							"           ((@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ .@/  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@         \r\n" + 
+							"           ((@@@@@@@@@  ,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  %@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  *@@@@@@@  @@@@@@@@@@@@@@@@@@@@@& (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@         \r\n" + 
+							"           ((@@@@@@@@  * /@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  %@@@@@@@@@@@@@&  /@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&   *@@@@.#@ ,@# @@@@@@@@@@@@@@@&*%@ #@/ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@         \r\n" + 
+							"           ((@@@@@@@  &@  /@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  %@*   ,&@@@@# /@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@. &. *@@@@@@/  (@@@@@@%,    /@@@@@@@.  @@@@@@@@@,   ./@@@@@@@@@@@@@@@@@&@@         \r\n" + 
+							"           ##@@@@@@. (@@@. (@@@@@@@@@@@@@(           #@@@@@@@@@@@   %@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@* /@@. *@@@@% *@@. @@@@@&@@@@@  #@@@* #@@  @@@@   @@@@@@@@@@@@@@@@@@@@@@@&&@         \r\n" + 
+							"           ##@@@@@  *@@@@@  #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  #@@@@@@@  @@@@@@@@@@@@@@@@@@@.      %@@@@@@@@@( .@@@@. *@@@@@@@@@@@@@@@@@@&&/.  ,@@@@@@@@@@@@@, (@@@@@@@@@@@@@@@@@@@@@@@@&@@         \r\n" + 
+							"           ##@@@@* *@@@@@@@  #@@@@@@@@@@@(           #@@@@@@@@@@@  %@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@             @@@@@@@@@@@@&  (@@@@( ,@@@@@@@@@@@@@  #@@@@@@@@@@@@@@@@@@@@@@@@&@@         \r\n" + 
+							"           ##@@@,  @@@@@@@@@  &@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   @@@@@%  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@. *@@@@@@@@@@@@@@/ ,@@@@&  ,@@@@@@@@@@@@@@  (@@@@@@@@@@@@@@@@@@@@@@@&@@         \r\n" + 
+							"           ##@@#               @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  %#    .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@. ,@@@@@@@@@@@@@@@@     @( ,@@@@@@@@@@@@@@@@,     (@@@@@@@@@@@@@@@@@&@@         \r\n" + 
+							"           ##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@         \r\n" + 
+							"           ##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@         \r\n" + 
+							"           %#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@         \r\n" + 
+							"           %%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@         \r\n" + 
+							"           %%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@         \r\n" + 
+							"           %%@@@@@@@@@@@*  ,@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  .@@@@@@@@     @@@@@@@   &@@@@@@@@@@@@@   /@@(      ,@@@@@@@@.  #@@@@@@@@@@@@@@@@@@@@&@@         \r\n" + 
+							"           %%@@@@@@@@@&   @@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*  @@@@@@@@       @@@@@@@*   @@@@@@@@@@@   /@@   /((     @@@(,%@  @(.@@@@@@@@@@@@@@@@@@&&@         \r\n" + 
+							"           %%@@@@@@@@#   @@@@@@@@@@@@@@@    @&.   ,@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@  %@@@@@@@    &   .@@@@@@@(   @@@@@@@@&   (@@@@@@@@@@    @@@@&&   ,&@@@@@%,     /@@@@@@&@@         \r\n" + 
+							"           %%@@@@@@@@   (@@@@@@@@@@@@@@@      ,.     @@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@     @@@@  ,@@@@@@@    @@%    @@@@@@@   .@@@@@@@   %@@@@@@@@@@    /@@@@   @#  .@@@# .%@@,   ,@@@@&&@         \r\n" + 
+							"           %%@@@@@@@@   @@@@@@       @@@    @@@@@,   (@@@@@@@@@@.           .@@@@.      @@@@@@   @@,  @@@@@@@    @@@@/   /@@@@@@*   @@@@@%   #@@@@@@@%     #@@@@@@@@@@@@@@@@@@@#,       @@@@&&@         \r\n" + 
+							"           %%@@@@@@@@   @@@@@@@@@@@@@@@@    @@@@@.   #@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@@@   &  &@@@@@@    &@@@@@    (@@@@@,   @@@@&   @@@@@@@/    @@@@@@@@@@@@@@@@@@@@&   *@@@    @@@@&&%         \r\n" + 
+							"           &%@@@@@@@@    @@@@@@@@@@@@@@@     ./,    .@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@@@@    *@@@@@@,               #@@@@   /@@@#   &@@@@@@,           @@@@@@@@@@@@@@,   .@#     @@@@&&#         \r\n" + 
+							"           &&@@@@@@@@@   (@@@@@@@@@@@@@@    @*    (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.  @@@@@@@                 @@@.   @@@%   @@@@@@@@            @@@@@@@@@@@@@@@@     @    @@@@&&#         \r\n" + 
+							"           &&@@@@@@@@@@,   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   %@@@(   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&#         \r\n" + 
+							"           &&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&#         \r\n" + 
+							"           &&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&#         \r\n" + 
+							"           &&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&#         \r\n" + 
+							"           &&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.       .@@@@@@@@@@   @@@@@@@@@    @.     ,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&(         \r\n" + 
+							"           &&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,&@@@@,   %@@@@@@@@   @@@@@@@@@     #@@/    &@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&(         \r\n" + 
+							"           &&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#         (@@@(           .@@@@    @@@@@/   (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&(         \r\n" + 
+							"           &&@@@@*      &@@@@@@@@@@@  ,@@@@@@@@@@@@.     /@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   *@@@#   (@@@@@@@@   @@@@@@@@@    @@@@@    #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&(         \r\n" + 
+							"           &&@@@ ./@@@    @@@@@@@@@@  *@@@@@@@@@     ./*.,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@           (@@@@@@@@   @@@@@@@@@            (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&%(         \r\n" + 
+							"           &&@@@@%*.      .@@@@            #@@@    #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(//%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(//#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&%(         \r\n" + 
+							"           @&@@.   &@@@   .@@@@@@@@@  *@@@@@@@@    #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%(         \r\n" + 
+							"           &@@@    *@,    .@@@@@@@@@  *@@@@@@@@@     .*, ,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%(         \r\n" + 
+							"           @@@@@%    #@...*@@@@@@@@@@@@@@@@@@@@@@@#.    .%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%         \r\n" + 
+							"           @&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%         \r\n" + 
+							"           @@@@@@@@@@@@@@@@@&&&&&&&@&@&@@@@@@@@@&&&&@@@&@@&&&@&&&&&@@@@@@@@@@@@@@@&@@@@&&&@@@@@@@@&&@&&&@@@&&@&&&&&&&&@@@@@@&&&&&&&&&@@@&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%%%%%%%%%%%%%%%%%%%%%%         \r\n" + 
+							"                        ./(&@@&&%&&&&@@@@@@@@@/                                                                                                            *@@@@@@@@@@&&&%&&@@&#*,.                     \r\n" + 
+							"                  &###########%%%%%%%#(/*,.                                                                                                                    .,*/(##%%%%%############&                \r\n" + 
+							"                                                                                                                                                                                                        \r\n" + 
+							"                                                                                                                                                                                                        \r\n" + 
+							"                                                                                                                                                                                                        \r\n" + 
+							"");
+
 					break;
 				case "armário":
 				case "armario":
-					System.out.println("Ao mexer no armário você encontra um fundo falso, deseja remover?");
-					String fundo = input.next();
-					if (fundo == "Sim") {
-						System.out.println("Você encontrou um cofre\n"
-								+ "para abri-lo resolva a equação:");
-					}
-					break;
+					boolean correto1 = false;
+	                    do {
+	                    	 
+	    	                    List alternativas1 = new ArrayList();
+	    	                    alternativas1.add("64"); // resposta correta
+	    	                    alternativas1.add("-64");
+	    	                    alternativas1.add("0");
+	    	                    alternativas1.add("32");
+	    	                    alternativas1.add("-32");
+	                        Collections.shuffle(alternativas1);
+	                        System.out.println("Ao mexer no armário você encontra um fundo falso, deseja remover?");
+	    					String fundo = input.next().toLowerCase();
+	    					switch (fundo) {
+	    					case "sim":
+	    					System.out.println("Você encontrou um cofre\n"
+    								+ "para abri-lo encontre as raizes e o vertice"
+    								+ " da equação abaixo:\n"
+    								+ " x²-12x+20=0");
+    					System.out.println("a) " + alternativas1.get(0));
+                        System.out.println("b) " + alternativas1.get(1));
+                        System.out.println("c) " + alternativas1.get(2));
+                        System.out.println("d) " + alternativas1.get(3));
+                        System.out.println("e) " + alternativas1.get(4));
+                        System.out.println("Qual o valor do Δ?");
+                        String resposta = input.next();
+                        switch (resposta) {
+                            case "a":
+                            case "A":
+                                if (alternativas1.get(0).equals("64")) {
+                                    System.out.println("Resposta correta!");
+                                    correto1 = true;
+                                } else {
+                                    System.out.println("Resposta incorreta!");
+                                }
+                                break;
+                            case "b":
+                            case "B":
+                                if (alternativas1.get(1).equals("64")) {
+                                    System.out.println("Resposta correta!");
+                                    correto1 = true;
+                                } else {
+                                    System.out.println("Resposta incorreta!");
+                                }
+                                break;
+                            case "c":
+                            case "C":
+                                if (alternativas1.get(2).equals("64")) {
+                                    System.out.println("Resposta correta!");
+                                    correto1 = true;
+                                } else {
+                                    System.out.println("Resposta incorreta!");
+                                }
+                                break;
+                            case "d":
+                            case "D":
+                                if (alternativas1.get(3).equals("64")) {
+                                    System.out.println("Resposta correta!");
+                                    correto1 = true;
+                                } else {
+                                    System.out.println("Resposta incorreta!");
+                                }
+                                break;
+                            case "e":
+                            case "E":
+                                if (alternativas1.get(4).equals("64")) {
+                                    System.out.println("Resposta correta!");
+                                    correto1 = true;
+                                } else {
+                                    System.out.println("Resposta incorreta!");
+                                }
+                                break;
+                            default:
+                                System.out.println("Escolha inválida!");
+
+                                }
+                        
+	                    	case "não":
+	                    	case "nao":
+	                    		break;
+                    
+                    } 
+	    					}while (!correto1);
+                        if (correto1=true) {
+        					boolean correto2 = false;
+    	                    do {
+    	                    	 
+    	    	                    List alternativas2 = new ArrayList();
+    	    	                    alternativas2.add("{10,2}"); // resposta correta
+    	    	                    alternativas2.add("{-10,2}");
+    	    	                    alternativas2.add("{-2,-10}");
+    	    	                    alternativas2.add("{5,4}");
+    	    	                    alternativas2.add("{3,7}");
+    	    	                    System.out.println("Quais as raizes da equação?");
+    	                        Collections.shuffle(alternativas2);
+        					System.out.println("a) " + alternativas2.get(0));
+                            System.out.println("b) " + alternativas2.get(1));
+                            System.out.println("c) " + alternativas2.get(2));
+                            System.out.println("d) " + alternativas2.get(3));
+                            System.out.println("e) " + alternativas2.get(4));
+                            String resposta1 = input.next();
+                            switch (resposta1) {
+                                case "a":
+                                case "A":
+                                    if (alternativas2.get(0).equals("{10,2}")) {
+                                        System.out.println("Resposta correta!");
+                                        correto2 = true;
+                                    } else {
+                                        System.out.println("Resposta incorreta!");
+                                    }
+                                    break;
+                                case "b":
+                                case "B":
+                                    if (alternativas2.get(1).equals("{10,2}")) {
+                                        System.out.println("Resposta correta!");
+                                        correto2 = true;
+                                    } else {
+                                        System.out.println("Resposta incorreta!");
+                                    }
+                                    break;
+                                case "c":
+                                case "C":
+                                    if (alternativas2.get(2).equals("{10,2}")) {
+                                        System.out.println("Resposta correta!");
+                                        correto2 = true;
+                                    } else {
+                                        System.out.println("Resposta incorreta!");
+                                    }
+                                    break;
+                                case "d":
+                                case "D":
+                                    if (alternativas2.get(3).equals("{10,2}")) {
+                                        System.out.println("Resposta correta!");
+                                        correto2 = true;
+                                    } else {
+                                        System.out.println("Resposta incorreta!");
+                                    }
+                                    break;
+                                case "e":
+                                case "E":
+                                    if (alternativas2.get(4).equals("{10,2}")) {
+                                        System.out.println("Resposta correta!");
+                                        correto2 = true;
+                                    } else {
+                                        System.out.println("Resposta incorreta!");
+                                    }
+                                    break;
+                                default:
+                                    System.out.println("Escolha inválida!");
+                                    
+
+                            }
+    	                    } while (!correto2);
+    	                    if (correto2=true) {
+            					boolean correto3 = false;
+        	                    do {
+        	                    	 
+        	    	                    List alternativas2 = new ArrayList();
+        	    	                    alternativas2.add("6"); // resposta correta
+        	    	                    alternativas2.add("12");
+        	    	                    alternativas2.add("3");
+        	    	                    alternativas2.add("9");
+        	    	                    alternativas2.add("5");
+        	    	                    System.out.println("Qual o valor do vértice da equação?");
+        	                        Collections.shuffle(alternativas2);
+            					System.out.println("a) " + alternativas2.get(0));
+                                System.out.println("b) " + alternativas2.get(1));
+                                System.out.println("c) " + alternativas2.get(2));
+                                System.out.println("d) " + alternativas2.get(3));
+                                System.out.println("e) " + alternativas2.get(4));
+                                String resposta1 = input.next();
+                                switch (resposta1) {
+                                    case "a":
+                                    case "A":
+                                        if (alternativas2.get(0).equals("6")) {
+                                            System.out.println("Resposta correta!");
+                                            correto3 = true;
+                                        } else {
+                                            System.out.println("Resposta incorreta!");
+                                        }
+                                        break;
+                                    case "b":
+                                    case "B":
+                                        if (alternativas2.get(1).equals("6")) {
+                                            System.out.println("Resposta correta!");
+                                            correto3 = true;
+                                        } else {
+                                            System.out.println("Resposta incorreta!");
+                                        }
+                                        break;
+                                    case "c":
+                                    case "C":
+                                        if (alternativas2.get(2).equals("6")) {
+                                            System.out.println("Resposta correta!");
+                                            correto3 = true;
+                                        } else {
+                                            System.out.println("Resposta incorreta!");
+                                        }
+                                        break;
+                                    case "d":
+                                    case "D":
+                                        if (alternativas2.get(3).equals("6")) {
+                                            System.out.println("Resposta correta!");
+                                            correto3 = true;
+                                        } else {
+                                            System.out.println("Resposta incorreta!");
+                                        }
+                                        break;
+                                    case "e":
+                                    case "E":
+                                        if (alternativas2.get(4).equals("6")) {
+                                            System.out.println("Resposta correta!");
+                                            correto3 = true;
+                                        } else {
+                                            System.out.println("Resposta incorreta!");
+                                        }
+                                        break;
+                                    default:
+                                        System.out.println("Escolha inválida!");
+                                        
+
+                                }
+        	                    } while (!correto3);
+        	                    if (correto3 = true) {
+        	                    	chave_sala=chave_sala+1;
+        	                    	System.out.println("Você encontrou uma chave!");
+        	                    }
+                        }
+                        }
+	                    break;
 				case "porta":
 					int i1,n=0;
 					if (grampo >0 && chave_sala==0) {
@@ -529,6 +803,7 @@ public static String jogador(){
          grampo = grampo + 1;
           return grampo;
       }
+      
 
     
     }
